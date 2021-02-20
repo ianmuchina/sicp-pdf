@@ -6,7 +6,7 @@
 %  It will be read in by texi-to-latex.pl.  %
 %===========================================%
 
-\documentclass[11pt,oneside]{book}
+\documentclass[12pt,oneside]{book}
 
 % New line height: 1.05 * 1.2 = 1.26
 \renewcommand{\baselinestretch}{1.05}
@@ -18,12 +18,8 @@
 }                                                      %  single quotes not
 \setmonofont{Inconsolata LGC}                          %  to turn out curly
                                                        %  ("typographic")
-\defaultfontfeatures{%                                 %  in verbatim blocks
-  Scale=MatchLowercase, % ... and here again           %  of Scheme code.
-  Mapping=tex-text,                                    %  Now the quote is
-  SmallCapsFeatures={LetterSpace=2.5,WordSpace=1.05},  %  upright and safely
-}                                                      %  copy-pasteable to
-\setmainfont{Linux Libertine O}                        %  the REPL without
+                                                     %  copy-pasteable to
+\setmainfont{Times New Roman}                        %  the REPL without
 \setsansfont{Linux Biolinum O} %-----------------------%  giving errors.
 
 \usepackage{polyglossia}
@@ -65,13 +61,13 @@
 \usepackage[final]{pdfpages} % inserts pages from a pdf file
 
 % Page geometry for 10-inch tablets:
-\usepackage[papersize={148mm,197mm},
-            top=21mm,
-            textwidth=111mm,  % increase one or both of these by 1mm or so to
-            textheight=148mm, % make the source compile with TeX Live 2013
-            hcentering,       % if you get "Too many unprocessed floats" error
-]{geometry}
-
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
 \usepackage{titlesec}  % to change the appearance of section titles
 \usepackage{listings}  % for syntax highlighted code listings
 \usepackage{verbatim}  % for simple verbatim and comment environments
